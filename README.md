@@ -3,7 +3,7 @@
 ```console
 git clone {repository URL}
 ```
-**and**
+**Then**
 ```console
 npm install
 ```
