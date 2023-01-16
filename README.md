@@ -1,4 +1,9 @@
 # Postman + newman + github actions
-3. Run `npm i` (install node.js dependencies)
-4. Run `npm run tern-on-api`(to run testing server locally )
-
+**If you want use this repository, download git repository and use install node modules**
+```console
+git clone {repository URL}
+```
+**and**
+```console
+npm install
+```
