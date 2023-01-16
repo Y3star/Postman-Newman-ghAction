@@ -5,7 +5,7 @@
   "scripts": {
     "tern-on-api": "cp mockApi/db_back_up.yaml mockApi/db_stage.yaml && npx yaml-server --hotReload=off --autoStart=off --port 3000 --database ./mockApi/db_stage.yaml",
     "petstore-collection": "newman run petstore.collection.json",
-    "store-collection": "newman run store.collection.json"
+    "store-collection": "newman run store.collection.json -r htmlextra"
   },
   "keywords": [
     "api",
@@ -18,6 +18,7 @@
   "dependencies": {
     "allure-commandline": "^2.20.1",
     "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11",
     "yaml-server": "^1.10.0"
   }
 }
