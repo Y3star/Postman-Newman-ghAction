@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "tern-on-api": "cp mockApi/db_back_up.yaml mockApi/db_stage.yaml && npx yaml-server --hotReload=off --autoStart=off --port 3000 --database ./mockApi/db_stage.yaml",
-    "petstore-collection": "newman run petstore.collection.json",
-    "store-collection": "newman run store.collection.json -r htmlextra"
+    "petstore-collection": "newman run petstore.collection.json -r htmlextra",
+    "store-collection": "newman run store.collection.json "
   },
   "keywords": [
     "api",
