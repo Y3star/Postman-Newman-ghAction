@@ -4,8 +4,12 @@
   "description": "",
   "scripts": {
     "tern-on-api": "cp mockApi/db_back_up.yaml mockApi/db_stage.yaml && npx yaml-server --hotReload=off --autoStart=off --port 3000 --database ./mockApi/db_stage.yaml",
-    "petstore-collection": "newman run petstore.collection.json -r htmlextra",
-    "store-collection": "newman run store.collection.json "
+    "petstore:html": "newman run petstore.collection.json -r htmlextra",
+    "store:allure": "newman run store.collection.json -r allure",
+    "petstore:allure": "newman run petstore.collection.json -r allure",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:serve": "allure serve allure-results",
+    "test:html":"timeout 30s npm run tern-on-api & npm run petstore:html"
   },
   "keywords": [
     "api",
