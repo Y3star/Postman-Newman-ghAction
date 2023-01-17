@@ -17,6 +17,8 @@ jobs:
       run: npm i
     - name: Run test collection
       run: npm run test:allure
+    - name: Generate allure-report
+      run: npx allure generate allure-results --clean
     - uses: actions/upload-artifact@v3
       if: always()
       with:
