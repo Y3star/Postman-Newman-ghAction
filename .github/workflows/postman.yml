@@ -14,19 +14,18 @@ jobs:
       with:
         node-version: 16
     - name: Install dependencies
-      run: npm install
-    - name: Run newman test
-      run: npm run test:html
-    - name: Upload Results
-      uses: actions/upload-artifact@v3
+      run: npm i
+    - name: Run test collection
+      run: npm run test:allure
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: newmanHtml
-        path: ./newman                    
+        name: allure
+        path: allure-report/
     - name: Deploy to pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: newman
+        publish_dir: allure-report

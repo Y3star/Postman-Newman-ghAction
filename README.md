@@ -1,6 +1,6 @@
 # Postman + newman + github actions (Simple store template)
 
-**Add npm scripts to run postman collection with newman**
+**In this repository add npm scripts to run postman collection with newman**
 
 **We have allure and html reports**
 
