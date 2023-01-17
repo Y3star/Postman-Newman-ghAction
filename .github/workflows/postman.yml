@@ -8,25 +8,37 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [16.17.1]
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - name: Install dependencies
-      run: npm install
-    - name: Run newman test
-      run: npm run test:html
-    - name: Upload Results
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: newmanHtml
-        path: ./newman                    
-    - name: Deploy to pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3.7.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: newman
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+            node-version: ${{ matrix.node-version }}
+            cache: "npm"
+      - run: npm i npm@latest
+      - run: npm i
+
+      - name: Install newman
+        run: npm install -g newman
+
+      - name: Install reporter
+        run: npm install -g allure-commandline 
+  
+      - name: Run newman test
+        run: npm run test:html
+      - name: Upload Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: newmanHtml
+          path: ./newman                    
+      - name: Deploy to pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: newman
