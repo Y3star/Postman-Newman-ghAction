@@ -9,7 +9,7 @@
     "petstore:allure": "newman run petstore.collection.json -r allure",
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:serve": "allure serve allure-results",
-    "test:html":"timeout 5s npm run tern-on-api & npx run petstore:html"
+    "test:html":"timeout 5s npm run tern-on-api & npm run petstore:html"
   },
   "keywords": [
     "api",
