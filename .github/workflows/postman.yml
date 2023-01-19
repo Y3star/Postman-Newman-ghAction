@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -17,8 +19,6 @@ jobs:
       run: npm i
     - name: Run test collection
       run: npm run test:allure
-    - permissions:
-      contents: write
     - uses: actions/upload-artifact@v3
       if: always()
       with:
