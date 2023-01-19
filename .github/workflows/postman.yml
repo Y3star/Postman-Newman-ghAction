@@ -17,6 +17,8 @@ jobs:
       run: npm i
     - name: Run test collection
       run: npm run test:allure
+    - permissions:
+      contents: write
     - uses: actions/upload-artifact@v3
       if: always()
       with:
