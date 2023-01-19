@@ -29,3 +29,5 @@ allure generate allure-results --clean -o allure-report
 ```console
 allure serve allure-results
 ```
+**How look like allure report view report**
+![](https://i.imgur.com/2fdGqhQ.png)
