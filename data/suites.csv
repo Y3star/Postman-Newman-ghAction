@@ -1,6 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Thu Jan 19 10:37:53 UTC 2023","Thu Jan 19 10:37:53 UTC 2023","42","pet","","","","","Deletes a pet",""
-"failed","Thu Jan 19 10:37:53 UTC 2023","Thu Jan 19 10:37:53 UTC 2023","67","pet","","","","","Updates a pet in the store with form data",""
-"passed","Thu Jan 19 10:37:53 UTC 2023","Thu Jan 19 10:37:53 UTC 2023","89","pet","","","","","Finds Pets by status",""
-"passed","Thu Jan 19 10:37:52 UTC 2023","Thu Jan 19 10:37:53 UTC 2023","223","pet","","","","","Find pet by ID",""
-"passed","Thu Jan 19 10:37:53 UTC 2023","Thu Jan 19 10:37:53 UTC 2023","30","pet","","","","","Finds Pets by tags",""
+"failed","Mon Feb 13 20:41:27 UTC 2023","Mon Feb 13 20:41:27 UTC 2023","840","pet","","","","","Find pet by ID",""
